@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RAG Document Intelligence</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>RAG Document Intelligence</h1>
+
+            <p>
+                Chat with your documents using
+                semantic search, hybrid retrieval and reranking.
+            </p>
+        </header>
+
+
+        <section class="upload-card">
+
+            <h2>Upload Documents</h2>
+
+            <p class="hint">
+                Select one or multiple PDF, DOCX or TXT files.
+            </p>
+
+            <input
+                type="file"
+                id="documentFile"
+                accept=".pdf,.docx,.txt"
+                multiple
+            >
+
+            <button onclick="uploadDocument()">
+                Process Documents
+            </button>
+
+            <div id="uploadStatus"></div>
+
+        </section>
+
+
+        <section class="chat-card">
+
+            <h2>Ask Your Documents</h2>
+
+            <div id="chatBox">
+
+                <div class="message system-message">
+                    Upload documents and ask a question.
+                </div>
+
+            </div>
+
+
+            <div class="question-area">
+
+                <input
+                    type="text"
+                    id="questionInput"
+                    placeholder="Ask something about your documents..."
+                    onkeydown="handleEnter(event)"
+                >
+
+                <button onclick="askQuestion()">
+                    Ask
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="architecture">
+
+            <h2>RAG Pipeline</h2>
+
+            <div class="pipeline">
+
+                <span>Documents</span>
+                <span>→</span>
+                <span>Chunking</span>
+                <span>→</span>
+                <span>Embeddings</span>
+                <span>→</span>
+                <span>FAISS + BM25</span>
+                <span>→</span>
+                <span>Hybrid Retrieval</span>
+                <span>→</span>
+                <span>Reranker</span>
+                <span>→</span>
+                <span>Answer</span>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,306 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+.container {
+    width: 92%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+
+/* Header */
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #64748b;
+    font-size: 16px;
+}
+
+
+/* Cards */
+
+.upload-card,
+.chat-card,
+.architecture {
+    background: white;
+    padding: 28px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.06);
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.hint {
+    color: #64748b;
+    margin-bottom: 18px;
+}
+
+
+/* File input */
+
+input[type="file"] {
+    display: block;
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin-bottom: 16px;
+
+    border: 2px dashed #cbd5e1;
+
+    border-radius: 10px;
+
+    background: #f8fafc;
+}
+
+
+/* Buttons */
+
+button {
+    border: none;
+
+    padding: 12px 22px;
+
+    border-radius: 9px;
+
+    background: #2563eb;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+
+/* Upload status */
+
+#uploadStatus {
+    margin-top: 15px;
+
+    font-weight: 600;
+
+    color: #334155;
+}
+
+
+/* Chat */
+
+#chatBox {
+    height: 420px;
+
+    overflow-y: auto;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    padding: 18px;
+
+    margin: 20px 0;
+
+    background: #f8fafc;
+}
+
+.message {
+    padding: 14px;
+
+    margin-bottom: 14px;
+
+    border-radius: 12px;
+
+    line-height: 1.6;
+}
+
+.system-message {
+    background: #e2e8f0;
+}
+
+.user-message {
+    background: #dbeafe;
+
+    text-align: right;
+}
+
+.answer-message {
+    background: #dcfce7;
+}
+
+
+/* Question area */
+
+.question-area {
+    display: flex;
+
+    gap: 10px;
+}
+
+#questionInput {
+    flex: 1;
+
+    padding: 13px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 9px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+#questionInput:focus {
+    border-color: #2563eb;
+}
+
+
+/* Sources */
+
+.source {
+    margin-top: 14px;
+
+    padding-top: 10px;
+
+    border-top: 1px solid #cbd5e1;
+
+    font-size: 13px;
+
+    color: #475569;
+}
+
+.source ul {
+    margin-top: 8px;
+
+    padding-left: 20px;
+}
+
+
+/* Retrieved context */
+
+.retrieved-details {
+    margin-top: 15px;
+}
+
+.retrieved-details summary {
+    cursor: pointer;
+
+    font-weight: 600;
+
+    color: #2563eb;
+}
+
+.retrieved-chunk {
+    margin-top: 12px;
+
+    padding: 14px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 10px;
+}
+
+.retrieved-chunk p {
+    margin: 8px 0;
+
+    color: #334155;
+}
+
+.retrieved-chunk small {
+    color: #64748b;
+}
+
+
+/* Architecture */
+
+.pipeline {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.pipeline span {
+    padding: 9px 13px;
+
+    border-radius: 8px;
+
+    background: #eef2ff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+
+        margin: 20px auto;
+    }
+
+    header h1 {
+        font-size: 29px;
+    }
+
+    .question-area {
+        flex-direction: column;
+    }
+
+    .question-area button {
+        width: 100%;
+    }
+
+    #chatBox {
+        height: 350px;
+    }
+}
